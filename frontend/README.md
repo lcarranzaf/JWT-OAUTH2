@@ -32,45 +32,53 @@ Este proyecto es una aplicación web completa que implementa autenticación medi
 
 ---
 
+
 ## 🧱 Estructura del proyecto
 
+```plaintext
 root/
 ├── backend/
-│ ├── controllers/
-│ ├── middlewares/
-│ ├── models/
-│ ├── routes/
-│ ├── utils/
-│ └── server.js
+│   ├── controllers/
+│   ├── middlewares/
+│   ├── models/
+│   ├── routes/
+│   ├── utils/
+│   └── server.js
 ├── frontend/
-│ ├── components/
-│ ├── context/
-│ ├── pages/
-│ ├── services/
-│ └── main.jsx
+│   ├── components/
+│   ├── context/
+│   ├── pages/
+│   ├── services/
+│   └── main.jsx
 
-## 🧑‍💻 Instalación y ejecución
+🧑‍💻 Instalación y ejecución
+🔧 Backend
+Ir a la carpeta backend/
 
-### 🔧 Backend
+Instalar dependencias:
 
-1. Ir a la carpeta `backend/`
-2. Instalar dependencias:
-   ```bash
-   npm install
+bash
+Copiar
+Editar
+npm install
+Crear archivo .env en la raíz de backend/ con el siguiente contenido:
 
-Configurar variables de entorno .env
-Crear archivo .env:
-
+env
+Copiar
+Editar
 DB_NAME=nombre
 DB_USER=postgres
 DB_PASSWORD=contraseña
 DB_HOST=localhost
-PORT=puerto
+PORT=5000
 JWT_SECRET=tu_JWT
 GOOGLE_CLIENT_ID=ID_Client
 GOOGLE_CLIENT_SECRET=Secret_Client
+Ejecutar el servidor:
 
-Ejecutar servidor:
+bash
+Copiar
+Editar
 nodemon server.js
 
 💻 Frontend
