@@ -51,17 +51,20 @@ root/
 │   ├── services/
 │   └── main.jsx
 ```
-
-🧑‍💻 Instalación y ejecución
+---
+## 🧑‍💻 Instalación y ejecución
 🔧 Backend
 Ir a la carpeta backend/
 
 Instalar dependencias:
 
-
 npm install
+
 Crear archivo .env en la raíz de backend/ con el siguiente contenido:
 
+env
+Copiar
+Editar
 DB_NAME=nombre
 DB_USER=postgres
 DB_PASSWORD=contraseña
@@ -70,11 +73,12 @@ PORT=5000
 JWT_SECRET=tu_JWT
 GOOGLE_CLIENT_ID=ID_Client
 GOOGLE_CLIENT_SECRET=Secret_Client
-
 Ejecutar el servidor:
+
 nodemon server.js
 
-💻 Frontend
+---
+## 💻 Frontend
 Ir a la carpeta frontend/
 
 Instalar dependencias:
@@ -82,21 +86,29 @@ Instalar dependencias:
 npm install
 
 Ejecutar el servidor:
+
+bash
+Copiar
+Editar
 npm run dev
+---
 
-
-🔐 Rutas protegidas
+##🔐 Rutas protegidas
 /home – Accesible solo con token válido
 
 /google-success – Captura el token de Google y redirige al home
 
-📌 Consideraciones
+---
+
+## 📌 Consideraciones
 El botón de cerrar sesión también previene volver atrás con la flecha del navegador.
 
 El nombre del usuario aparece en el navbar una vez logueado.
 
-Google OAuth2 redirige al frontend con un token en la URL.
+Google OAuth2 redirige al frontend con un token JWT en la URL.
 
-🧠 Autor
+Rutas como /home están protegidas en el frontend mediante un componente <RutaPrivada />.
+---
+##🧠 Autor
 Desarrollado por Luis Carranza
 Proyecto académico de autenticación segura con tecnologías modernas 🔐
