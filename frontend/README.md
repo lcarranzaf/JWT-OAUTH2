@@ -62,17 +62,22 @@ npm install
 
 Crear archivo .env en la raíz de backend/ con el siguiente contenido:
 
-env
-Copiar
-Editar
 DB_NAME=nombre
+
 DB_USER=postgres
+
 DB_PASSWORD=contraseña
+
 DB_HOST=localhost
+
 PORT=5000
+
 JWT_SECRET=tu_JWT
+
 GOOGLE_CLIENT_ID=ID_Client
+
 GOOGLE_CLIENT_SECRET=Secret_Client
+
 Ejecutar el servidor:
 
 nodemon server.js
@@ -87,16 +92,14 @@ npm install
 
 Ejecutar el servidor:
 
-bash
-Copiar
-Editar
 npm run dev
 ---
 
 ##🔐 Rutas protegidas
-/home – Accesible solo con token válido
 
-/google-success – Captura el token de Google y redirige al home
+home – Accesible solo con token válido
+
+google-success – Captura el token de Google y redirige al home
 
 ---
 
@@ -107,8 +110,10 @@ El nombre del usuario aparece en el navbar una vez logueado.
 
 Google OAuth2 redirige al frontend con un token JWT en la URL.
 
-Rutas como /home están protegidas en el frontend mediante un componente <RutaPrivada />.
+Rutas como home están protegidas en el frontend mediante un componente RutaPrivada .
 ---
 ##🧠 Autor
+
 Desarrollado por Luis Carranza
+
 Proyecto académico de autenticación segura con tecnologías modernas 🔐
