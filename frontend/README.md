@@ -58,8 +58,9 @@ Ir a la carpeta backend/
 
 Instalar dependencias:
 
-npm install
-
+ ```bash
+   npm install
+  ``` 
 Crear archivo .env en la raíz de backend/ con el siguiente contenido:
 
 DB_NAME=nombre
@@ -79,41 +80,44 @@ GOOGLE_CLIENT_ID=ID_Client
 GOOGLE_CLIENT_SECRET=Secret_Client
 
 Ejecutar el servidor:
-
+```bash
 nodemon server.js
-
+```
 ---
 ## 💻 Frontend
 Ir a la carpeta frontend/
 
 Instalar dependencias:
-
+```bash
 npm install
+```
 
 Ejecutar el servidor:
-
+```bash
 npm run dev
+```
+
 ---
+## 🔐 Rutas protegidas
 
-##🔐 Rutas protegidas
+-home – Accesible solo con token válido
 
-home – Accesible solo con token válido
-
-google-success – Captura el token de Google y redirige al home
+-google-success – Captura el token de Google y redirige al home
 
 ---
 
 ## 📌 Consideraciones
-El botón de cerrar sesión también previene volver atrás con la flecha del navegador.
+-El botón de cerrar sesión también previene volver atrás con la flecha del navegador.
 
-El nombre del usuario aparece en el navbar una vez logueado.
+-El nombre del usuario aparece en el navbar una vez logueado.
 
-Google OAuth2 redirige al frontend con un token JWT en la URL.
+-Google OAuth2 redirige al frontend con un token JWT en la URL.
 
-Rutas como home están protegidas en el frontend mediante un componente RutaPrivada .
+-Rutas como home están protegidas en el frontend mediante un componente RutaPrivada .
+
 ---
-##🧠 Autor
+## 🧠 Autor
 
-Desarrollado por Luis Carranza
+-Desarrollado por Luis Carranza
 
-Proyecto académico de autenticación segura con tecnologías modernas 🔐
+-Proyecto académico de autenticación segura con tecnologías modernas 🔐
