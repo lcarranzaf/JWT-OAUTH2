@@ -17,8 +17,19 @@ const Register = () => {
 
   const validar = () => {
     const errores = {};
-    if (!datos.nombre.trim()) errores.nombre = 'El nombre es obligatorio';
-    if (!datos.apellido.trim()) errores.apellido = 'El apellido es obligatorio';
+    const soloLetrasRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+
+    if (!datos.nombre.trim()) {
+      errores.nombre = 'El nombre es obligatorio';
+    } else if (!soloLetrasRegex.test(datos.nombre)) {
+      errores.nombre = 'El nombre solo debe contener letras';
+    }
+
+    if (!datos.apellido.trim()) {
+      errores.apellido = 'El apellido es obligatorio';
+    } else if (!soloLetrasRegex.test(datos.apellido)) {
+      errores.apellido = 'El apellido solo debe contener letras';
+    }
 
     if (!datos.email) {
       errores.email = 'El correo es obligatorio';
@@ -55,8 +66,10 @@ const Register = () => {
 
     try {
       await register(datos);
+      alert("✅ Registro exitoso");
       navigate('/login');
     } catch (err) {
+      console.error('❌ Error del servidor:', err.response?.data);
       setErrorServidor(err.response?.data?.msg || 'Error al registrar');
     }
   };

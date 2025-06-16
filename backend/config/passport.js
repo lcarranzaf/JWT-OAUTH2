@@ -2,10 +2,9 @@ const passport = require('passport');
 const { Strategy: JwtStrategy, ExtractJwt } = require('passport-jwt');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const { sequelize } = require('./db');
-const User = require('../models/user'); // Asegúrate de que este modelo esté listo
+const User = require('../models/user'); 
 require('dotenv').config();
 
-// JWT Strategy
 const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
   secretOrKey: process.env.JWT_SECRET
@@ -21,7 +20,7 @@ passport.use(new JwtStrategy(jwtOptions, async (payload, done) => {
   }
 }));
 
-// Google OAuth Strategy
+
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
@@ -41,7 +40,6 @@ passport.use(new GoogleStrategy({
   }
 }));
 
-// Serialización (opcional si usas sesiones)
 passport.serializeUser((user, done) => done(null, user.id));
 passport.deserializeUser(async (id, done) => {
   const user = await User.findByPk(id);
